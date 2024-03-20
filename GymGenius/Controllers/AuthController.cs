@@ -35,7 +35,7 @@ namespace GymGenius.Controllers
         }
 
 
-        [Authorize(Roles = clsRoles.roleAdmin)]
+        //[Authorize(Roles = clsRoles.roleAdmin)]
         [HttpPost("registerwithRole")]
         public async Task<IActionResult> RegisterAsync([FromBody] RegisterModel model, string role)
         {

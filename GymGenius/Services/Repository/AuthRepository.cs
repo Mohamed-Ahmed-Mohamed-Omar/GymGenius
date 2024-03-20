@@ -312,17 +312,17 @@ namespace GymGenius.Services.Repository
                 if (!updateResult.Succeeded)
                     return "ErrorInUpdateUser";
 
-                var message = "Code To Reset Passsword : " + user.Code;
+                var message = "Code To Reset Password : " + user.Code;
 
                 //Send Code To  Email 
                 await _mailingRepository.SendingMail(user.Email, message, "Reset Password");
                 await trans.CommitAsync();
-                return "Success";
+                return Email;
             }
             catch (Exception ex)
             {
                 await trans.RollbackAsync();
-                return "Failed";
+                return "Failed Send Code";
             }
         }
 
