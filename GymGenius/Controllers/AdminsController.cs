@@ -27,8 +27,8 @@ namespace GymGenius.Controllers
         }
 
 
-        [HttpDelete("RemoveserFromRole/{UserNameOrID}/{RoleName}")]
-        public async Task<IActionResult> RemoveserFromRole(string UserNameOrID, string RoleName)
+        [HttpDelete("RemoveUserFromRole/{UserNameOrID}/{RoleName}")]
+        public async Task<IActionResult> RemoveUserFromRoleAsync(string UserNameOrID, string RoleName)
         {
             var data = await _adminRepository.RemoveserFromRoleAsync(UserNameOrID, RoleName);
 

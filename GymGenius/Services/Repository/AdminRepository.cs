@@ -81,7 +81,7 @@ namespace GymGenius.Services.Repository
             return (IEnumerable<string>)users;
         }
 
-        public async Task<ResponseGeneral> RemoveserFromRoleAsync(string UserNameOrID, string RoleName)
+        public async Task<ResponseGeneral> RemoveUserFromRoleAsync(string UserNameOrID, string RoleName)
         {
             var RG = new ResponseGeneral();
 

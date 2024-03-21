@@ -6,7 +6,7 @@ namespace GymGenius.Services.Interface
     {
         Task<ResponseGeneral> AddUserToRoleAsync(string UserNameOrID, string RoleName);
 
-        Task<ResponseGeneral> RemoveserFromRoleAsync(string UserNameOrID, string RoleName);
+        Task<ResponseGeneral> RemoveUserFromRoleAsync(string UserNameOrID, string RoleName);
 
         Task<IEnumerable<string>> GetAllUserByRoleNameAsync(string RoleName);
 
