@@ -30,7 +30,7 @@ namespace GymGenius.Controllers
         [HttpDelete("RemoveUserFromRole/{UserNameOrID}/{RoleName}")]
         public async Task<IActionResult> RemoveUserFromRoleAsync(string UserNameOrID, string RoleName)
         {
-            var data = await _adminRepository.RemoveserFromRoleAsync(UserNameOrID, RoleName);
+            var data = await _adminRepository.RemoveUserFromRoleAsync(UserNameOrID, RoleName);
 
             return Ok(data);
         }
