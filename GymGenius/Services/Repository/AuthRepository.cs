@@ -188,7 +188,7 @@ namespace GymGenius.Services.Repository
                     Email = user.Email,
                     ExpiresOn = jwtSecurityToken.ValidTo,
                     IsAuthenticated = true,
-                    Roles = new List<string> { "User" },
+                    Roles = new List<string> { Role },
                     Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
                     Username = user.UserName,
                     RefreshToken = refreshToken.Token,

@@ -36,7 +36,7 @@ namespace GymGenius.Controllers
 
 
         [Authorize(Roles = clsRoles.roleAdmin)]
-        [HttpPost("registerwithRole")]
+        [HttpPost("regi sterwithRole")]
         public async Task<IActionResult> RegisterAsync([FromBody] RegisterModel model, string role)
         {
             if (!ModelState.IsValid)
@@ -106,7 +106,7 @@ namespace GymGenius.Controllers
 
 
         [HttpPost("ResetPassword")]
-        public async Task<IActionResult> ResetPassword(string Email, string Password)
+        public async Task<IActionResult> ResetPassword([FromForm] string Email, [FromForm] string Password)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
