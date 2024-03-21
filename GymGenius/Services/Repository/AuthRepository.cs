@@ -42,15 +42,6 @@ namespace GymGenius.Services.Repository
                 if (await _userManager.FindByEmailAsync(model.Email) is not null)
                     return (new AuthModel { Message = "Email is already registered!" });
 
-                var allowedExtensions = new List<string> { "outlook.com", "gmail.com", "hotmail.com" };
-
-                var emailDomain = model.Email.Split('@').LastOrDefault();
-
-                if (!allowedExtensions.Any(ext => emailDomain.Equals(ext, StringComparison.OrdinalIgnoreCase)))
-                {
-                    return new AuthModel { Message = "Invalid email extension" };
-                }
-
                 if (await _userManager.FindByNameAsync(model.Username) is not null)
                     return (new AuthModel { Message = "Username is already registered!" });
 
@@ -134,15 +125,6 @@ namespace GymGenius.Services.Repository
             {
                 if (await _userManager.FindByEmailAsync(model.Email) is not null)
                     return (new AuthModel { Message = "Email is already registered!" });
-
-                var allowedExtensions = new List<string> { "outlook.com", "gmail.com", "hotmail.com" };
-
-                var emailDomain = model.Email.Split('@').LastOrDefault();
-
-                if (!allowedExtensions.Any(ext => emailDomain.Equals(ext, StringComparison.OrdinalIgnoreCase)))
-                {
-                    return new AuthModel { Message = "Invalid email extension" };
-                }
 
                 if (await _userManager.FindByNameAsync(model.Username) is not null)
                     return (new AuthModel { Message = "Username is already registered!" });
